@@ -1,0 +1,109 @@
+ctrl + shift + P  --->  command palette
+
+
+ctrl + I	  ---> internal find, press return after that, F3 for next.
+	alt + R   ---> toggle regular expression in internal find.
+	alt + enter -> select all matches.
+ctrl + shift + F > find in multiple files
+
+
+ctrl + D	  ---> selecting multiple incidence of a word and edit once for all.
+ctrl + K	  ---> skip one selection.
+alt + G		  ---> select all incidences at once (modified from alt+f3)
+
+
+ctrl+shift+L  ---> split_selection_into_lines
+
+
+shift + l_mouse	  ---> column selection; +ctrl to multi selection.
+
+ctrl+/	---> toggle comment/uncomment
+
+
+ctrl + Alt + J ---> Emmet: Go to matching pair: jump between beginning and ending tag
+
+
+In command palette:
+(type, and choose (set up))
+syntax:html  
+snippet, type in keywords and then press tab
+	try to create some snippets when you need to type something very often
+
+
+ctrl + P	---> goto any where, in the same project.
+	fussy filename search in the same project, or opened in the same window
+	filename@mark :linenumber
+! ONLY work in insert mode
+
+
+
+side bar toggle	---> ctrl + b,
+
+
+Multiple windows
+shift+alt 1 2 3 4 8 9
+shift+ctrl+n move file to the nth group
+ctrl+n  change focus to the nth group 
+
+
+
+
+Packages might be useful:
+(brows read me of a package: preference -> browse packages)
+
+Emmet, which is zen coding
+	auto completion and extension
+
+advancednewfile: creat new file and folder superfast
+	win/ctrl+alt+n to create file
+
+sidebar enhancement: more powerful sidebar, including viewing html file in browser
+
+docBlockr: easier to write comments/ documentations in your scripts.
+	usage: write a class with few elements, type in /** then hit tab, then keep hitting tab to move to each annotation you want to modify.
+	https://code.tutsplus.com/courses/perfect-workflow-in-sublime-text-2/lessons/docblockr
+
+
+
+
+
+Regular Expression: 
+	https://msdn.microsoft.com/en-us/library/az24scfc%28v=vs.110%29.aspx
+
+
+
+
+
+Vintage mode: Vim command usage:
+
+1. change/select whatever inside a "" a () or a {} 
+in command mode, place the cursor inside "" () or {}, 
+then successively typin ci or vi followed by the token"(or{
+"good bye"   ci" and vi"  
+(good bye)   ci( and vi(
+
+{good bye    ci{ and vi{
+
+bye
+bey}
+
+
+
+
+Super!!! Vim with ctrl+shift+L
+
+1. in vintage mode, select sections in lines with visual mode, ctrl+d or mouse.
+2. ctrl+shift+L splict into multiple lines
+3. press v again to go back to commond mode
+4. then use a, or i to enter insert mode.
+5. ctrl+J to join lines
+
+
+
+folding: 
+	{ "keys": ["ctrl+shift+["], "command": "fold" },
+	{ "keys": ["ctrl+shift+]"], "command": "unfold" },
+	{ "keys": ["ctrl+k", "ctrl+1"], "command": "fold_by_level", "args": {"level": 1} },
+	{ "keys": ["ctrl+k", "ctrl+2"], "command": "fold_by_level", "args": {"level": 2} },
+		{ "keys": ["ctrl+k", "ctrl+0"], "command": "unfold_all" },
+	{ "keys": ["ctrl+k", "ctrl+j"], "command": "unfold_all" },

@@ -1,0 +1,137 @@
+Latex in Vim
+
+Insert a package:
+amsmath and then press <F5>
+
+Placeholder: <++> jump to it with <C-j> Ctrl + j
+
+
+Shortcouts
+
+e^^	= e^{}<++>
+`p	= \pi
+`/	= frac{}{}
+`8	= infty
+
+
+Folding:
+fold: in normal mode press \rf
+unfold: press za
+
+zj moves the cursor to the next fold.
+zk moves the cursor to the previous fold.
+zo opens a fold at the cursor.
+zO opens all folds at the cursor.
+zM closes all open folds.
+zR decreases the foldlevel to zero -- all folds will be open.
+
+
+Insert a Reference or citation:
+this is a reference to (\ref{<F9>})  then select the ref you want
+same use of <F9> for \cite{}  and  \inputgraphics{}
+
+
+Compiling a document:
+\ll
+
+View:
+\lv
+
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsfonts}
+\usepackage{enumerate}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{tikz}
+\usetikzlibrary{arrows}
+\usepackage[abs]{overpic}
+\setlength\unitlength{1mm}
+
+\setlength{\parindent}{0in}
+\begin{documents}
+<++>
+\end{documents}
+
+
+\paragraph{Instructions:} This is a closed-book exam
+\paragraph{} SBU ID:
+
+\begin{center}
+  \Large Quiz 1: Applied Calculus I (Spring 2013)
+    \tiny    \small    \normalsize    \large    \Large    \LARGE    \huge
+\end{center}
+
+\begin{enumerate}   you can simply type emumerate and them <F5>
+\item item1 xxxx
+\item item2 xxxx 
+  \begin{enumerate}[(a)]
+  \item itemA xxx
+  \item itemB xxx
+  \end{enumerate}
+\end{enumerate}
+
+\textbf{Please...}
+\bigskip
+\newpage
+
+math:
+ $\frac{5 \sqrt[3]{2}}{\pi}$) 
+ $f(x) = |e^x + 1|$
+ $2^{x + 3} = e \cdot 3^{x + 2}$.
+ $y = -\sin(e x) + 1$
+ $f'(x)$. $f''(x)$.
+
+
+\begin{displaymath}
+    f(x) = \sqrt{\frac{x}{x^2 - 1}}.
+\end{displaymath}    
+
+
+Insert Graph:
+\begin{overpic}[scale=0.7]
+   {quiz3Fig1.eps}
+   \put(15,45) {$A$}
+   \put(5,15){$B$}
+\end{overpic}
+
+
+
+% sublime
+% 
+
+% Tex Live
+% latexmk -cd -e $pdflatex ='pdflatex -interaction=nonstopmode -synctex=1 %S %O' -f -pdf Dissertation_template-PHD.tex
+
+%kpsewhich lingmacros.sty   % find where is the package.
+%/usr/local/texlive/2012/texmf-dist/tex/latex/tree-dvips/lingmacros.sty
+
+
+
+
+%%%%% abc@laptop, texlive is 2009, so it different than John@desktop which has texlive 2012
+abc@abc-Notebook:/usr/share/texmf-texlive/tex/latex$ kpsewhich yplan.sty
+
+1. download style files, 
+\usepackage{/usr/share/texmf-texlive/tex/latex/lingmacros/lingmacros}
+\usepackage{/usr/share/texmf-texlive/tex/latex/tree-dvips/tree-dvips}
+
+2. install styles.
+sudo mktexlsr
+
+
+// use commands to convert tex to pdb, 3 steps
+latex Dissertation_Yuan_Yao.tex 
+dvips Dissertation_Yuan_Yao.dvi 
+ps2pdf Dissertation_Yuan_Yao.ps
+
+
+
+install revtex4
+john@john-ideapad:~/Downloads$ sudo unzip revtex4-1/revtex4-1-tds.zip -d /usr/share/texlive/texmf-dist/
+
+install revtex4-1 on desktop
+1. john@desktop:~/Downloads$ unzip revtex4-1.zip 
+2. sudo mktexlsr
+3. john@desktop:~/Downloads$ kpsewhich revsymb4-1.sty
+> /usr/local/texlive/2012/texmf-dist/tex/latex/revtex/revsymb4-1.sty
+
